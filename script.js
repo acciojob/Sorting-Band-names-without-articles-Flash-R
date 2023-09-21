@@ -1,8 +1,8 @@
 function artcleless(arr){
 	let StringArray = arr.split(",");
-  console.log(StringArray);
+
 	let len = StringArray.length;
-  console.log(len);
+
 	
 	let artclelessArray = [];
 	let regx = /\bthe|an|a\b/gi;
@@ -14,22 +14,21 @@ function artcleless(arr){
 		artclelessArray.push(word);
 		mp[word] = StringArray[i];
 	}
-  console.log(mp);
-  console.log(artclelessArray);
+
 	let ans = [];
 	artclelessArray.sort();
-  console.log(artclelessArray);
-
+	
+	let ele = document.getElementById("#band");
 	for(let i of artclelessArray){
-    console.log(i);
-		ans.push(mp[i])
+		
+	ele.innerHTML = '<li>'+ mp[i] +'</li>';
 	}
-  return ans;
+	
 }
 
 const input = prompt("Enter/ a coma separated String");
 // console.log(input.s/plit(","))
 
-alert(artcleless(input)); 
+artcleless(input); 
 
 
